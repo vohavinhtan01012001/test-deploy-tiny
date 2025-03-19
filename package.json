@@ -1,4 +1,6 @@
 {
+  "description": "Tiny.vn App",
+  "author": "LE TRONG HIEU",
   "name": "Tiny.vn",
   "version": "0.0.0",
   "private": true,
@@ -74,32 +76,8 @@
       "deleteAppDataOnUninstall": false
     },
     "win": {
-      "icon": "src/assets/icon_256.ico",
-      "requestedExecutionLevel": "requireAdministrator",
-      "certificateSubjectName": "LE TRONG HIEU",
-      "signingHashAlgorithms": [
-        "sha256"
-      ],
-      "publisherName": "LE TRONG HIEU",
-      "extraResources": [
-        {
-          "from": "src/helper/win32",
-          "to": "src/helper",
-          "filter": [
-            "core.exe",
-            "ensure_tap_device.bat",
-            "tap-windows6"
-          ]
-        },
-        {
-          "from": "src/helper/win32/tap-windows6",
-          "to": "src/helper/tap-windows6",
-          "filter": [
-            "*"
-          ]
-        },
-        "src/assets"
-      ]
+      "signingHashAlgorithms": [],
+      "certificateFile": null
     }
   }
 }
