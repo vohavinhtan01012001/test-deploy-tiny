@@ -1,0 +1,175 @@
+.server-select {
+    --radius: 12px;
+    --bg: #212121;
+    --input-padding: 8px 32px 8px 16px;
+
+    position: relative;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 0;
+    border-radius: var(--radius);
+    z-index: 9;
+    transition: var(--transition);
+
+    &.active {
+        .server-select-menu {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .server-select-input-icon {
+            transform: translateY(-50%) rotate(180deg);
+        }
+    }
+
+    &-input {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        border-radius: var(--radius);
+        background: #484748;
+        border: 1px solid #707070;
+        transition: var(--transition);
+        input {
+            width: 100%;
+            font-size: var(--text-xs);
+            line-height: normal;
+            padding: var(--input-padding);
+            border-radius: inherit;
+            border: none;
+            outline: none;
+            color: #ffffff;
+            background: transparent;
+            transition: var(--transition);
+            &::placeholder {
+                color: #707070;
+            }
+        }
+        &-icon {
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            transform: translateY(-50%);
+            pointer-events: none;
+            transition: var(--transition);
+        }
+    }
+
+    &-current-server {
+        padding: var(--input-padding);
+        .server {
+            flex-direction: row-reverse;
+            padding: 0;
+            &-text {
+                margin-left: 0;
+                margin-right: 8px;
+            }
+            &-flag {
+                margin-left: auto;
+            }
+            &-auto-connect-arrow {
+                order: -1;
+            }
+        }
+    }
+
+    &-menu {
+        --scrollbar-thumb-color: #484748;
+        position: absolute;
+        top: calc(100% + 6px);
+        left: 0;
+        width: 100%;
+        background: var(--bg);
+        border-radius: var(--radius);
+        text-align: left;
+        overflow: hidden;
+        z-index: 20;
+        opacity: 0;
+        pointer-events: none;
+        transition: var(--transition);
+        &-content {
+            max-height: 300px;
+            padding: 12px;
+            overflow: auto;
+            .server {
+                &:not(:last-of-type) {
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+
+    .server-group {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        &-header {
+            border-radius: 8px;
+            transition: 0.3s ease-in-out;
+            position: relative;
+            margin-bottom: 8px;
+            &:hover,
+            &.active {
+                background: #484748;
+            }
+            .collapse-btn {
+                padding: 0 8px;
+                border-radius: 4px;
+                width: max-content;
+                height: max-content;
+                margin-left: auto;
+                position: absolute;
+                top: 50%;
+                right: 16px;
+                transform: translateY(-50%);
+                background: var(--bg);
+            }
+            .collapse-icon {
+                border-style: solid;
+                border-width: 2px 2px 0 0;
+                display: inline-block;
+                height: 10px;
+                width: 10px;
+                position: relative;
+                transform: rotate(135deg) translate(-2px, 2px);
+                transition: 0.3s ease;
+                transform-origin: center;
+                border-color: #707070;
+            }
+            .server {
+                padding: 4px;
+                padding-left: 12px;
+                margin-bottom: 0 !important;
+                .server-text {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    p {
+                        margin-bottom: 0 !important;
+                        width: 50%;
+                    }
+                }
+            }
+        }
+        &-content {
+            height: 0;
+            overflow: hidden;
+            margin-left: 32px;
+            transition: all 0.3s ease;
+        }
+        &.open {
+            .server-group-header {
+                .collapse-icon {
+                    transform: rotate(-45deg) translate(-2px, 2px);
+                }
+                .server-item {
+                    background: #ddd;
+                }
+            }
+            .server-group-content {
+                height: auto;
+            }
+        }
+    }
+}

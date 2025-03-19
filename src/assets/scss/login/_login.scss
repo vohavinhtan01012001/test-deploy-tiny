@@ -1,0 +1,229 @@
+.login-view {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.register-form {
+  padding-bottom: 0px !important;
+}
+
+.login-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+  max-width: 430px;
+  height: max-content;
+  border-radius: 16px;
+  padding: 64px 32px 32px 64px;
+  margin: 32px auto;
+
+  .form-bg {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    // background: linear-gradient(to bottom, #484748, transparent);
+    mix-blend-mode: screen;
+    &,
+    & * {
+      pointer-events: none;
+    }
+    span {
+      position: absolute;
+      inset: 1px;
+      border-radius: inherit;
+      background: black;
+    }
+    &-1 {
+      position: absolute;
+      // inset: 1px;
+      border-radius: inherit;
+      // background: linear-gradient(-60deg, rgba(10, 10, 10, 0.25), rgba(10, 10, 10, 0.7));
+      backdrop-filter: blur(10px);
+    }
+  }
+
+  .form-content {
+    flex-grow: 1;
+    position: relative;
+    z-index: 1;
+  }
+
+  .login-title {
+    align-self: flex-start;
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .login-subtitle {
+    align-self: flex-start;
+    font-size: var(--text-xs);
+    color: #707070;
+    margin-bottom: 24px;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 16px;
+    &:last-child {
+      margin-bottom: 8px;
+    }
+    .input-title {
+      font-size: var(--text-sm);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .input-field {
+      position: relative;
+      input {
+        width: 100%;
+        font-size: var(--text-sm);
+        color: white;
+        padding: 8px 16px;
+        padding-right: 40px;
+        background-color: #484748;
+        border: 1px solid #707070;
+        border-radius: 12px;
+        outline: none;
+        &::placeholder {
+          color: #707070;
+        }
+      }
+      .post-icon {
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
+    }
+  }
+
+  span[role="alert"] {
+    color: var(--primary);
+    font-size: var(--text-xs);
+    order: 3;
+    & + .input-field {
+      input {
+        border-color: var(--primary);
+      }
+    }
+  }
+
+  .checkbox {
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    input[type="checkbox"] {
+      position: absolute;
+      inset: 0;
+      margin: 0;
+      appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      outline: none;
+      width: 100%;
+    }
+    .checkbox-box {
+      position: relative;
+      display: block;
+      min-width: 16px;
+      width: 16px;
+      height: 16px;
+      border: 0.5px solid #707070;
+      border-radius: 4px;
+      margin-right: 6px;
+      pointer-events: none;
+    }
+    input:checked + .checkbox-box {
+      background: var(--primary);
+      border-color: var(--primary);
+      &::after {
+        content: "";
+        background: url("@/assets/images/icons/check.svg");
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.8);
+        width: 13px;
+        height: 9px;
+      }
+    }
+    &-label {
+      color: #99999a;
+    }
+  }
+
+  .login-btn {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .or-text {
+    position: relative;
+    font-size: var(--text-xs);
+    color: #707070;
+    padding: 0 8px;
+  }
+
+  .line {
+    flex-grow: 1;
+    border-top: 1px solid #484748;
+  }
+
+  .no-account-text {
+    font-size: var(--text-xs);
+    color: #707070;
+    text-align: center;
+    span {
+      color: var(--primary);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+.el-autocomplete-suggestion__wrap {
+  background-color: #484748;
+  border-radius: 12px;
+  padding: 8px 0;
+  max-height: 300px;
+  overflow: auto;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding-right: 16px;
+
+    li {
+      cursor: pointer;
+      padding: 4px 0;
+    }
+  }
+}
+
+.autocomplete-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.el-input__suffix {
+  position: absolute;
+  right: 15px;
+  top: 5px;
+}
+
+.suffix-icon {
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}

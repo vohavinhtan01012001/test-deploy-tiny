@@ -1,0 +1,80 @@
+.the-header {
+  --header-padding: 12px;
+  --avatar-size: 40px;
+
+  padding-right: var(--header-padding);
+  background: var(--bg-block-color);
+  border-radius: var(--radius-block);
+  display: flex;
+  align-items: center;
+
+  &-user {
+    display: flex;
+    align-items: center;
+    padding: var(--header-padding);
+
+    &-avatar {
+      position: relative;
+      width: var(--avatar-size);
+      min-width: var(--avatar-size);
+      height: var(--avatar-size);
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 12px;
+    }
+
+    &-name {
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: white;
+    }
+
+    &-id {
+      font-size: var(--text-2xs);
+      color: var(--text-color);
+    }
+
+    &-tag-free-trial {
+      display: inline-block;
+      font-size: var(--text-2xs);
+      line-height: 1.4;
+      font-weight: 400;
+      color: #141414;
+      background: #26e3d2;
+      padding: 2px 4px;
+      border-radius: 8px;
+      margin-left: 4px;
+    }
+
+    &-tag-subcribe {
+      display: inline-block;
+      font-size: var(--text-2xs);
+      line-height: 1.4;
+      font-weight: 400;
+      color: #fff;
+      background: var(--primary);
+      padding: 2px 4px;
+      border-radius: 8px;
+      margin-left: 4px;
+    }
+  }
+
+  &-logo {
+    max-width: 98.66px;
+    margin-right: 12px;
+  }
+
+  .search {
+    width: 316px;
+    max-width: 100%;
+    margin-left: auto;
+    input {
+      cursor: pointer;
+    }
+  }
+
+  .custom-select {
+    margin-right: 8px;
+    display: flex;
+  }
+}

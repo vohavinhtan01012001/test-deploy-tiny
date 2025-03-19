@@ -1,0 +1,134 @@
+:root {
+    --text-2xs: 11px;
+    --text-xs: 12px;
+    --text-sm: 14px;
+    --text-base: 16px;
+    --text-lg: 18px;
+    --text-xl: 20px;
+    --text-2xl: 24px;
+    --text-3xl: 28px;
+    --text-4xl: 30px;
+
+    --text-10px: 10px;
+    --text-13px: 13px;
+    --text-22px: 22px;
+    --text-28px: 28px;
+    --text-36px: 36px;
+    --text-48px: 48px;
+
+    --container-padding-x: 16px;
+    --container-padding-y: 20px;
+
+    --radius-block: 16px;
+
+    --primary: #F04E4C;
+    --primary-gradient: linear-gradient(to top, #5B1818, #AF3645);
+    --bg-color: #2D2D2D;
+    --bg-block-color: #141414;
+    --text-color: #707070;
+    --scrollbar-thumb-color: #212121;
+    --linear-button-bg: linear-gradient(98.25deg, #00FFEC 2.85%, #62E399 47.39%, #EDBC22 96.21%);
+    --linear-text-bg: linear-gradient(100.08deg, #00FFEC -25.64%, #62E399 41.39%, #EDBC22 114.86%);
+
+    --transition: 0.3s ease-in-out;
+}
+
+$displays: block, inline, inline-block, flex, grid;
+
+$positions: relative, absolute, fixed, sticky, static;
+
+$aligns: (
+    stretch: stretch,
+    center: center,
+    start: flex-start,
+    end: flex-end,
+    baseline: baseline,
+    inintal: inintal,
+    inherit: inherit,
+);
+
+$justifies: (
+    start: flex-start,
+    end: flex-end,
+    center: center,
+    between: space-between,
+    around: space-around,
+    evenly: space-evenly,
+    initial: initial,
+    inherit: inherit,
+);
+
+$overflows: hidden, visible, scroll, auto, initial, inherit;
+
+$base-rounded: 0.25rem; // 4px
+
+$rounded: (
+    none: 0,
+    sm: 0.125rem, // 2px
+    md: 0.375rem, // 6px
+    lg: 0.5rem, // 8px
+    xl: 0.75rem, // 12px
+    2xl: 1rem, // 16px
+    3xl: 1.5rem, // 24px
+    full: 9999px,
+    base: $base-rounded, 
+);
+
+$x-sides: (
+    l: left,
+    r: right
+);
+
+$y-sides: (
+    t: top,
+    b: bottom
+);
+
+$spacing-name: (
+    m: margin,
+    p: padding
+);
+
+$sides: (
+    l: left,
+    r: right,
+    b: bottom,
+    t: top
+);
+
+$text-aligns: left, center, right;
+
+$font-sizes: (
+    2xs: var(--text-2xs),
+    xs: var(--text-xs),
+    sm: var(--text-sm),
+    base: var(--text-base),
+    lg: var(--text-lg),
+    xl: var(--text-xl),
+    2xl: var(--text-2xl),
+    3xl: var(--text-3xl),
+    4xl: var(--text-4xl),
+
+    10px: var(--text-10px),
+    13px: var(--text-13px),
+    22px: var(--text-22px),
+    28px: var(--text-28px),
+    36px: var(--text-36px),
+    48px: var(--text-48px)
+);
+
+$weights: (
+    thin: 100,
+    extralight: 200,
+    light: 300,
+    normal: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+    extrabold: 800,
+    // black: 900
+);
+
+$text-transforms: uppercase, lowercase, capitalize;
+
+$text-decorations: underline, line-through;

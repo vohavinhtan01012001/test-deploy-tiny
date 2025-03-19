@@ -1,0 +1,105 @@
+.support {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #d6d6d6;
+    height: 100%;
+
+    .content-block {
+        flex-grow: 1;
+        padding: 48px 16px;
+    }
+    &-list {
+        max-width: 650px;
+        padding: 16px 32px 32px;
+        border-radius: 16px;
+        background: #212121;
+        margin: 32px auto;
+        display: flex;
+        flex-direction: column;
+    }
+    &-item {
+        border-bottom: 1px solid #484748;
+        &-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+            cursor: pointer;
+        }
+        &-title {
+            font-size: var(--text-sm);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        &-icon {
+            --icon-size: 24px;
+            --icon-color: #707070;
+            position: relative;
+            width: var(--icon-size);
+            min-width: var(--icon-size);
+            height: var(--icon-size);
+            border: 1px solid var(--icon-color);
+            border-radius: 50%;
+            margin-left: 12px;
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 50%;
+                height: 1px;
+                background-color: var(--icon-color);
+                transition: var(--transition);
+            }
+            &::before {
+                transform: translate(-50%, -50%) rotate(-180deg);
+            }
+            &::after {
+                transform: translate(-50%, -50%) rotate(90deg);
+            }
+        }
+        &-content {
+            font-size: var(--text-xs);
+            height: 0;
+            overflow: hidden;
+            line-height: 0;
+            transition: var(--transition);
+            a {
+                text-decoration: none;
+                color: white;
+                transition: var(--transition);
+                &:hover {
+                    color: var(--primary);
+                }
+            }
+        }
+        &.open {
+            .support-item-title {
+                color: var(--primary);
+            }
+            .support-item-content {
+                padding-bottom: 16px;
+                height: auto;
+                line-height: 1.4;
+            }
+            .support-item-icon {
+                &::before,
+                &::after {
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+    }
+    .main-title {
+        margin-bottom: 16px;
+    }
+    .btn {
+        font-size: var(--text-base);
+        font-weight: 600;
+        padding: 16px;
+        width: 256px;
+        margin: auto;
+    }
+}

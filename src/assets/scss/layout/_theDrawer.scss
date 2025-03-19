@@ -1,0 +1,217 @@
+.the-drawer {
+  --width: 208px;
+  --logo-width: 86.32px;
+  --nav-item-bg: #212121;
+  --nav-item-radius: 12px;
+  --header-padding: 12px;
+  --option-menu-left: 0;
+
+  position: relative;
+  // padding: 24px 12px 12px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg-block-color);
+  border-radius: var(--radius-block);
+  overflow: auto;
+  margin-right: 12px;
+  height: inherit;
+  flex-shrink: 0;
+  z-index: 1;
+  width: var(--width);
+  height: 100%;
+  transition: var(--transition);
+
+  &-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // margin-bottom: 12px;
+    padding: var(--header-padding) var(--header-padding) 0;
+    padding-top: 24px;
+  }
+
+  &-logo {
+    width: var(--logo-width);
+    min-width: var(--logo-width);
+    height: 28px;
+    display: flex;
+    align-items: center;
+  }
+
+  &-toggle {
+    width: 20px;
+    margin-left: 12px;
+    height: 28px;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &-bottom {
+    width: 100%;
+    padding-top: 36px;
+    overflow-y: auto;
+  }
+
+  &-nav {
+    display: flex;
+    flex-direction: column;
+    padding: var(--header-padding);
+    &-item {
+      flex-grow: 1;
+      padding: 8px 12px !important;
+      margin-bottom: 8px;
+      border-radius: var(--nav-item-radius);
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      color: #707070;
+      cursor: pointer;
+      transition: var(--transition);
+      &.active {
+        background: var(--nav-item-bg);
+        color: white;
+        .the-drawer-nav-item-icon {
+          &:first-of-type {
+            display: none;
+          }
+          &:last-of-type {
+            display: block;
+          }
+        }
+        .the-drawer-nav-item-count {
+          color: white;
+          background: var(--bg-block-color);
+        }
+      }
+      &-icon {
+        &:first-of-type {
+          display: block;
+        }
+        &:last-of-type {
+          display: none;
+        }
+      }
+      &-text {
+        white-space: nowrap;
+        font-size: var(--text-sm);
+        line-height: 1.7;
+        margin: 0 12px;
+      }
+      &-count {
+        font-size: var(--text-xs);
+        color: #707070;
+        padding: 0 6px;
+        height: 20px;
+        border-radius: 8px;
+        background: var(--nav-item-bg);
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+      }
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  &-register {
+    --register-display: block;
+    --register-padding: 12px;
+    border-radius: 8px;
+    background: #212121;
+    overflow: hidden;
+    margin: 0 auto 8px;
+    &-img {
+      position: relative;
+      padding-bottom: 51%;
+      display: var(--register-display);
+    }
+    &-content {
+      padding: var(--register-padding);
+    }
+    &-title {
+      font-size: var(--text-sm);
+      font-weight: 700;
+      margin-bottom: 24px;
+      display: var(--register-display);
+    }
+    &-btn {
+      width: 100%;
+      margin-bottom: 4px;
+      &-text {
+        margin-right: 8px;
+        display: var(--register-display);
+      }
+    }
+  }
+
+  &:not(.open) {
+    --width: 64px;
+    --logo-width: 31.47px;
+    --option-menu-left: -10px;
+
+    .the-drawer-top {
+      justify-content: center;
+    }
+
+    .the-drawer-toggle {
+      position: fixed;
+      top: calc(56px + var(--container-padding-y));
+      left: calc(0 + var(--container-padding-x));
+      width: 40px;
+      height: 40px;
+      border-radius: var(--nav-item-radius);
+      // background: var(--nav-item-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 0;
+      transform: scaleX(-1);
+      transition: transform 0.3s ease;
+    }
+
+    .the-drawer-bottom {
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+    }
+    .the-drawer-nav-item-text,
+    .the-drawer-nav-item-count {
+      display: none;
+    }
+    .the-drawer-register {
+      --register-display: none;
+      --register-padding: 0;
+      border-radius: 50%;
+      background: transparent;
+      &-btn {
+        width: 32px;
+      }
+    }
+  }
+
+  .custom-select-component {
+    .custom-select {
+      .option-menu {
+        left: var(--option-menu-left);
+        top: -50px;
+        transform: translateY(-105%);
+        .option {
+          padding: 16px;
+          font-size: var(--text-sm);
+          &:hover {
+            color: var(--primary);
+          }
+        }
+      }
+      &:focus {
+        .option-menu {
+          top: 5px;
+        }
+      }
+    }
+  }
+}

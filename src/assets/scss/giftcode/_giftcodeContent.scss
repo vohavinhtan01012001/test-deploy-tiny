@@ -1,0 +1,22 @@
+.giftcode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    // height: 100%;
+    .content-block {
+        flex-grow: 1;
+    }
+    &-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+        row-gap: 40px;
+        column-gap: 24px;
+    }
+    .point-block {
+        padding: 16px;
+        border: 1px solid #484748;
+        border-radius: 16px;
+        margin-bottom: 16px;
+    }
+}

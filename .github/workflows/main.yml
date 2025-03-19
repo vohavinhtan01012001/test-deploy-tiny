@@ -1,0 +1,41 @@
+name: Deploy Prod
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18.20.5'
+
+      - name: Install dependencies
+        run: yarn install
+        
+      - name: Install dependencies
+        run: npm install typescript --save-dev
+
+      - name: Build Next.js app
+        run: yarn build
+
+      - name: Deploy to remote server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USERNAME }}
+          password: ${{ secrets.REMOTE_PASSWORD }}
+          port: ${{ secrets.REMOTE_PORT }}
+          script: |
+            cd /var/www/new_tiny_app
+            git pull
+            yarn install
+            yarn build

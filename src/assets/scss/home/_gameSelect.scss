@@ -1,0 +1,124 @@
+.game-select {
+  display: flex;
+  flex-direction: column;
+  // overflow: auto;
+  flex-grow: 1;
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+  &-title {
+    font-size: var(--text-base);
+    font-weight: 600;
+  }
+  &-count {
+    margin-left: 8px;
+  }
+  &-view-all {
+    font-size: var(--text-xs);
+    color: #707070;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    svg {
+      margin-left: 6px;
+    }
+    &:hover {
+      color: var(--primary);
+    }
+  }
+  &-list,
+  .swiper {
+    height: 100%;
+  }
+  .swiper-slide {
+    width: 168px;
+  }
+  &-item {
+    position: relative;
+    padding: 8px;
+    border-radius: 16px;
+    background: #212121;
+    user-select: none;
+    min-height: 300px;
+
+    &-thumbnail {
+      position: relative;
+      padding-bottom: 121%;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    &-info {
+      padding: 4px 0;
+    }
+    &-title {
+      font-size: var(--text-sm);
+      color: #99999a;
+      margin-bottom: 0;
+    }
+    .hover-layout {
+      position: absolute;
+      background: rgba(72, 71, 72, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition);
+      border-radius: inherit;
+      left: 50%;
+      top: 100px;
+      transform: translate(-50%, -50%);
+
+      .btn {
+        min-width: 80px;
+      }
+    }
+    &:hover {
+      .hover-layout {
+        opacity: 1;
+        pointer-events: unset;
+      }
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background: #484748;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 200px 0 170px 250px #141414;
+    cursor: pointer;
+    z-index: 1;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 24px;
+      height: 24px;
+      background: url("@/assets/images/rabbit/icons/arrow-right-99.svg")
+        no-repeat;
+      background-size: 24px;
+    }
+
+    &.swiper-button-disabled {
+      display: none;
+    }
+  }
+
+  .swiper-button-prev {
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  .swiper-button-next {
+    right: 0;
+  }
+}

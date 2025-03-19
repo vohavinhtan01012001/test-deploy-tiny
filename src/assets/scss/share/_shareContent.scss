@@ -1,0 +1,67 @@
+.share {
+    &-giftcode {
+        display: grid;
+        grid-template-columns: 22fr 27fr;
+        gap: 12px;
+    }
+    &-text{
+        font-size: 32px;
+        line-height: 40px;
+        font-weight: bold;
+        color: #F04E4C;
+    }
+    &-input {
+        width: 100%;
+        font-size: var(--text-sm);
+        color: white;
+        padding: 8px 16px;
+        background-color: #484748;
+        border: 1px solid #707070;
+        border-radius: 12px;
+        outline: none;
+        &::placeholder {
+            color: #707070;
+        }
+    }
+    .btn {
+        flex-shrink: 0;
+        line-height: 1;
+    }
+    &-step {
+        --index-size: 29px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        max-width: 500px;
+        &-item {
+            display: flex;
+            align-items: center;
+            &-index {
+                width: var(--index-size);
+                min-width: var(--index-size);
+                height: var(--index-size);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid var(--primary);
+                background: linear-gradient(135deg, transparent, var(--primary));
+                margin-right: 12px;
+            }
+            &-text {
+                font-size: var(--text-sm);
+            }
+        }
+    }
+    &-gift {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+        gap: 24px;
+        &-item {
+            .giftcode-item-top {
+                min-height: 104px;
+                padding: 8px 16px;
+            }
+        }
+    }
+}

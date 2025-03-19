@@ -1,0 +1,320 @@
+// .payment-select-component {
+//     .selected-service-payment {
+//         display: flex;
+//         align-items: center;
+//         flex-wrap: wrap;
+//         background: var(--primary);
+//         border-radius: 10px;
+//         .selected-service {
+//             padding: 23px;
+//             min-width: 213px;
+//             display: flex;
+//             flex-direction: column;
+//             justify-content: center;
+//             margin: auto;
+//             .service-option-list {
+//                 .option {
+//                     &:not(:last-of-type) {
+//                         margin-bottom: 7px;
+//                     }
+//                     .lightning {
+//                         max-height: 7.17px;
+//                     }
+//                 }
+//             }
+//         }
+//         .payment-select {
+//             // min-height: 403px;
+//             min-height: 424px;
+//             padding: 26px 59px 30px 34px;
+//             background: #FFFFFF;
+//             border-radius: 10px;
+//             flex-grow: 1;
+//             &-title {
+//                 color: #1B1919;
+//                 margin-bottom: 36px;
+//             }
+//             .payment-select-row {
+//                 display: flex;
+//             }
+//             .payment-option-list {
+//                 margin-right: 34px;
+//                 margin-top: 14px;
+//                 .option {
+//                     min-width: 177px;
+//                     padding: 9px 16px;
+//                     padding-right: 13px;
+//                     border: 1px solid #D8DBDF;
+//                     border-radius: 12px;
+//                     transition: var(--transition);
+//                     display: flex;
+//                     align-items: center;
+//                     &:not(:last-of-type) {
+//                         margin-bottom: 16px;
+//                     }
+//                     &.active {
+//                         border-color: #4E49D6;
+//                     }
+//                     &-title {
+//                         color: #1A1A1A;
+//                         white-space: nowrap;
+//                     }
+//                     &.disabled {
+//                         pointer-events: none;
+//                         user-select: none;
+//                         opacity: 0.8;
+//                     }
+//                 }
+//             }
+//             .selected-payment-form {
+//                 width: 236px;
+//                 .qr-form {
+//                     display: flex;
+//                     flex-direction: column;
+//                     align-items: center;
+//                     .qr-container {
+//                         width: 148px;
+//                         height: 148px;
+//                         background: #FFFFFF;
+//                         border: 1px solid #4E49D6;
+//                         border-radius: 5px;
+//                     }
+//                 }
+//                 .input-form {
+//                     display: flex;
+//                     flex-direction: column;
+//                     align-items: center;
+//                     .form-field {
+//                         width: 100%;
+//                         margin-bottom: 20px;
+//                         .input-title {
+//                             color: #000000;
+//                         }
+//                         .input-field {
+//                             position: relative;
+//                             input {
+//                                 width: 100%;
+//                                 height: 24px;
+//                                 padding-left: 25px;
+//                                 padding-right: 12px;
+//                                 outline: none;
+//                                 border: none;
+//                                 border-bottom: 0.5px solid #000000;
+//                                 font-size: var(--text-xs);
+//                                 &::placeholder {
+//                                     color: #6B6B6B;
+//                                 }
+//                             }
+//                             .input-icon {
+//                                 position: absolute;
+//                                 top: 50%;
+//                                 left: 0;
+//                                 transform: translateY(-50%);
+//                             }
+//                         }
+//                     }
+//                     .form-group {
+//                         display: grid;
+//                         grid-template-columns: repeat(3, 1fr);
+//                         gap: 20px;
+//                         .form-field {
+//                             margin-bottom: 0;
+//                         }
+//                     }
+//                 }
+//                 .form-title {
+//                     max-width: 142px;
+//                     margin-bottom: 7px;
+//                     text-align: center;
+//                     color: var(--primary);
+//                 }
+//                 .amount-text {
+//                     color: #000000;
+//                     margin-top: 14px;
+//                     .price-text {
+//                         color: var(--primary);
+//                         margin-left: 6px;
+//                     }
+//                 }
+//             }
+//         }
+//         .payment-done {
+//             // min-height: 403px;
+//             min-height: 424px;
+//             padding: 26px 83px;
+//             background: #FFFFFF;
+//             border-radius: 10px;
+//             display: flex;
+//             flex-direction: column;
+//             align-items: center;
+//             flex-grow: 1;
+//             &-title {
+//                 color: #1B1919;
+//                 margin-top: 24px;
+//                 // margin-bottom: 88px;
+//                 margin-bottom: 17px;
+//             }
+
+//             .success-icon {
+//                 margin-bottom: 36px;
+//             }
+
+//             .payment-result {
+//                 width: 375px;
+//                 margin-bottom: 44px;
+//                 .divider {
+//                     width: 100%;
+//                     border-bottom: 1px solid var(--primary);
+//                     margin: 16px 0;
+//                 }
+//                 .price-text {
+//                     color: var(--primary);
+//                 }
+//             }
+
+//             .done-label {
+//                 color: #1F2A37;
+//             }
+//         }
+//     }
+// }
+
+.list-enter-active,
+.list-leave-active {
+    transition: var(--transition);
+}
+.list-enter-from,
+.list-leave-to {
+    opacity: 0;
+}
+
+.payment-select {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    &-block {
+        flex-grow: 1;
+    }
+    &-top {
+        margin-bottom: 40px;
+    }
+    &-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.7fr;
+        gap: 16px;
+    }
+    &-left {
+        border: 1px solid var(--primary);
+        border-radius: 12px;
+        background: rgba(240, 78, 76, 0.1);
+        height: 100%;
+        & > div:not(:last-child) {
+            border-bottom: 1px solid var(--primary);
+        }
+        &-bottom {
+            min-height: 152px;
+        }
+    }
+    &-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+    &-right {
+        display: flex;
+        flex-direction: column;
+    }
+    &-option {
+        color: #d6d6d6;
+        border: 1px solid #484748;
+        border-radius: 12px;
+        transition: var(--transition);
+        &:not(:last-of-type) {
+            margin-bottom: 12px;
+        }
+        &.active {
+            background: #484748;
+            flex-grow: 1;
+        }
+        &-top {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            cursor: pointer;
+            &-title {
+                font-size: var(--text-sm);
+                font-weight: 700;
+                margin: 0px 12px;
+            }
+            &-logo {
+                max-width: 24px;
+                margin-left: auto;
+            }
+        }
+        &-content {
+            height: 0;
+            overflow: hidden;
+            line-height: 0;
+            padding-bottom: 0;
+            transition: var(--transition);
+            &.active {
+                line-height: 1.5;
+                height: auto;
+                padding-bottom: 12px;
+                transition: var(--transition);
+            }
+            & > div {
+                max-width: 300px;
+                margin: auto;
+            }
+            .form-title {
+                max-width: 142px;
+                margin: auto;
+                margin-bottom: 7px;
+                text-align: center;
+            }
+            .amount-text {
+                font-size: var(--text-xs);
+                color: #99999a;
+                margin-top: 14px;
+                .price-text {
+                    color: #d6d6d6;
+                    margin-left: 6px;
+                }
+            }
+        }
+    }
+    .count-down-timer {
+        color: var(--primary);
+        font-weight: 600;
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+.animate-blink {
+    animation: blink 1.5s;
+    animation-fill-mode: both;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}

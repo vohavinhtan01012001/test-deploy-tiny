@@ -1,0 +1,38 @@
+.service-select {
+  max-width: 100%;
+  width: 100%;
+  padding: 68px 0;
+
+  .main-title,
+  .main-subtitle {
+    max-width: 522px;
+  }
+
+  .service-carousel {
+    max-width: 1122px;
+    margin: auto;
+
+    .swiper-wrapper {
+      align-items: center;
+    }
+    // .service-swiper {
+    //     margin-right: -1.4rem;
+    //     min-height: 331px;
+    //     .swiper-slide {
+    //         transition: var(--transition);
+    //         &:not(.swiper-slide-active) {
+    //             transform: scale(0.8356) translate(-10px);
+    //         }
+    //         &.swiper-slide-active {
+    //             margin-left: 1.3rem;
+    //         }
+    //         &.swiper-slide-prev {
+    //             margin-right: -2rem;
+    //         }
+    //         &.swiper-slide-next {
+    //             margin-left: 0.3rem;
+    //         }
+    //     }
+    // }
+  }
+}

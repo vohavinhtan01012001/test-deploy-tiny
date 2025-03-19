@@ -1,0 +1,30 @@
+.server-block {
+    &-count {
+        margin-left: 8px;
+    }
+
+    &-select {
+        background-image: url("@/assets/images/rabbit/home-map.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &-recommend {
+        .server {
+            border-color: #484748;
+            background: transparent !important;
+        }
+    }
+
+    &-connect {
+        &.btn {
+            font-size: var(--text-base);
+            font-weight: 600;
+            line-height: 1;
+            min-width: 200px;
+            padding: 12px;
+            margin: 32px auto auto;
+            border-radius: 12px;
+        }
+    }
+}
